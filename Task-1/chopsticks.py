@@ -5,7 +5,7 @@ def attack(p1,p2,player):
         attack(p1,p2,player)
     else:
         player[p2][to] += player[p1][fro]
-        if player[p2][to] > 5:
+        if player[p2][to] >= 5:
             player[p2][to] = 0
 
 
@@ -18,7 +18,7 @@ def split(p, player):
         assert keep+give==player[p][hand]
         player[p][hand] = keep
         player[p][opp] += give
-        if player[p][opp] > 5:
+        if player[p][opp] >= 5:
             player[p][opp] = 0        
     except AssertionError:
         print('Invalid split!')
